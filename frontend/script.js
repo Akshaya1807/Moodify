@@ -17,11 +17,15 @@ async function getRecommendation() {
    
     
     try {
-      const res = await fetch("http://localhost:3000/recommend", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ moodText })
-      });
+     fetch("https://moodify-backend-5p7s.onrender.com/analyze", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ mood: "happy" }),
+});
+
+
   
       const data = await res.json();
   
